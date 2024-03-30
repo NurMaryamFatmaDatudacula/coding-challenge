@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Coding Challenge 3
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: #1b9be6;
+            }
+
+            div {
+                background-color: white;
+                width: 300px;
+                height: 30px;
+                text-align: center;
+            }
+
+            table {
+                border-collapse: collapse;
+            }
+
+            th, td {
+                border: 1px solid black;
+                padding: 10px;
+                width: 300px;
+            }
+			a.h {
+				text-decoration: none;
+				color: #000;
+				font-size: 20px;
+			}
+			a.h:hover {
+				background-color: #53b6f0;
+				border-radius: 100px;
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+        </style>
+    </head>
+    <body>
+		<a class="h" href="index.html"> Return </a>
+        <h1> Name List </h1>
+
+       <table id="table"> 
+        <tr>
+            <th> First Name</th>
+            <th> Middle Name</th>
+            <th> Last Name</th>
+        </tr>
+       </table>
+       <br>
+       <br>
+       <button onclick="addName()">Add Name</button>
+       <br>
+       <br>
+        <script>
+            function addName(){
+                var n = prompt("Please enter your full name", "First name, Middlel name, Last name");
+                const split = n.split(",");
+
+                var table = document.getElementById("table");
+
+                var r = table.insertRow(-1);
+                var c1 = r.insertCell(0);
+                var c2 = r.insertCell(1);
+                var c3 = r.insertCell(2);
+
+                c1.innerHTML = split[0];
+                c2.innerHTML = split[1];
+                c3.innerHTML = split[2];
+            }
+        </script>
+    </body>
+</html>

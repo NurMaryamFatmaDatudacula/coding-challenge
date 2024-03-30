@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Coding Challenge 6
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: #5297ff;
+            }
+           
+			a.h {
+				text-decoration: none;
+				color: #000;
+				font-size: 20px;
+			}
+			a.h:hover {
+				background-color: #53b6f0;
+				border-radius: 100px;
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+        </style>
+    </head>
+    <body>
+		<a class="h" href="index.html"> Return </a>
+        <h1> Quadratic Formula </h1>
+
+        <button onclick="solve()">Find the root</button>
+        <button onclick="formula()">Show formula</button>
+
+        <h4 id="display"></h4>
+        <h4 id="result"></h4>
+
+        <script>
+            var va = prompt("Please enter a value for a: ");
+            var vb = prompt("Please enter a value for b: ");
+            var vc = prompt("Please enter a value for c: ");
+
+            function solve() {
+               var fm = vb * vb - 4 * va * vc
+               
+               if (fm > 0) {
+                    r1 = ((-vb - Math.sqrt(fm)) / (2 * va)).toFixed(4);
+                    r2 = ((-vb + Math.sqrt(fm)) / (2 * va)).toFixed(4);
+
+                    document.getElementById("result").innerHTML = "The roots of this equation are " + r1 + " and " + r2;
+               }
+
+               else if (fm == 0) {
+                    r1 = r2 = (-vb / (2 * va)).toFixed(4);
+
+                    document.getElementById("result").innerHTML = "The root of this equation is " + r1;
+
+               }
+
+               else {
+                    document.getElementById("result").innerHTML = "The x's of this equation are imaginary numbers.";
+               }
+            }
+
+            function formula() {
+                document.getElementById("display").innerHTML = "(" + va + ")x<sup>2</sup>" + "+" + "(" + vb + ")x" + " +" + "(" + vc + ")";
+            }
+        </script>
+    </body>
+</html>
